@@ -5,7 +5,7 @@ import { countries } from "../data/data";
 import { mockSouls } from "../data/souls";
 import Logo from "../../public/FIFA_WorldCup_logo.svg.png";
 import { shuffle } from "../../helpers";
-import Leftovers from "../../components/Leftovers";
+import LogoComponent from "../../components/LogoComponent";
 
 const Draw = () => {
   const array = Object.values(mockSouls);
@@ -27,9 +27,7 @@ const Draw = () => {
 
   return (
     <div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <Image src={Logo} alt="" width={800} />
-      </div>
+      <LogoComponent />
       <div className="table-container">
         {soulsValues?.map((soul, i) => (
           <div key={i} className="table-inner">

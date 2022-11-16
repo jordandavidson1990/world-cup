@@ -1,5 +1,5 @@
-import { Box } from "@material-ui/core";
 import { useState } from "react";
+import LogoComponent from "../../components/LogoComponent";
 import SoulsList from "../../components/SoulsList/SoulsList";
 import { countries } from "../data/data";
 
@@ -9,23 +9,34 @@ const Landing = ({ setSouls }: any) => {
   const [numberOfSouls, setNumberOfSouls] = useState(1);
 
   return (
-    <div style={{ display: "flex", justifyContent: "space-around" }}>
-      <Box>
-        <h1>Countries:</h1>
-        <ul>
+    <div>
+      <LogoComponent />
+      <div style={{ display: "flex", justifyContent: "space-around" }}>
+        <div className="table-container">
           {availableCountries.map((country) => (
-            <li key={country}>{country}</li>
+            <div
+              key={country}
+              className="table-inner"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                textAlign: "center",
+              }}
+            >
+              {country.split(" ").map((t) => (
+                <p key={t} style={{ textAlign: "center", margin: "auto" }}>
+                  {t}
+                </p>
+              ))}
+            </div>
           ))}
-        </ul>
-      </Box>
-      <Box>
-        <h2>Contestants:</h2>
-        <SoulsList
-          number={numberOfSouls}
-          setNumber={setNumberOfSouls}
-          setSouls={setSouls}
-        />
-      </Box>
+        </div>
+      </div>
+      <SoulsList
+        number={numberOfSouls}
+        setNumber={setNumberOfSouls}
+        setSouls={setSouls}
+      />
     </div>
   );
 };
