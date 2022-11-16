@@ -1,10 +1,10 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { useEffect } from "react";
-// import { createMuiTheme, createTheme, ThemeProvider } from "@material-ui/core";
-// import { MuiThemeProvider } from "material-ui/styles";
+import { useEffect, useState } from "react";
+import { SoulsProvider } from "../components/context";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -17,14 +17,19 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const darkTheme = createTheme({
     palette: {
-      mode: "dark",
+      // mode: "",
     },
   });
 
   return (
     <ThemeProvider theme={darkTheme}>
+      <Head>
+        <title>World Cup 🏆</title>
+      </Head>
       <CssBaseline />
-      <Component {...pageProps} />
+      <SoulsProvider>
+        <Component {...pageProps} />
+      </SoulsProvider>
     </ThemeProvider>
   );
 }

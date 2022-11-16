@@ -1,9 +1,9 @@
 import { Box } from "@material-ui/core";
 import { useState } from "react";
-import SoulsList from "../../components/SoulsList";
+import SoulsList from "../../components/SoulsList/SoulsList";
 import { countries } from "../data/data";
 
-const Landing = () => {
+const Landing = ({ setSouls }: any) => {
   const [availableCountries, setAvailableCountries] =
     useState<string[]>(countries);
   const [numberOfSouls, setNumberOfSouls] = useState(1);
@@ -20,7 +20,11 @@ const Landing = () => {
       </Box>
       <Box>
         <h2>Contestants:</h2>
-        <SoulsList number={numberOfSouls} setNumber={setNumberOfSouls} />
+        <SoulsList
+          number={numberOfSouls}
+          setNumber={setNumberOfSouls}
+          setSouls={setSouls}
+        />
       </Box>
     </div>
   );

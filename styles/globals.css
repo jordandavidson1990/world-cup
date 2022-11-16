@@ -24,3 +24,70 @@ a {
     background: black;
   }
 }
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-inner {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  width: 10vw;
+  height: 12vh;
+  margin: 12px;
+  font-weight: 500;
+}
+.table-inner h3 {
+  text-decoration: underline;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table-inner:nth-child(even) {
+  background-color: #01316b;
+  color: whitesmoke;
+}
+.table-inner:nth-child(odd) {
+  background-color: white;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin-bottom: 10vh;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.table-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
